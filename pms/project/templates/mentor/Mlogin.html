@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Mentor</title>
+    <link rel="stylesheet" href="{% static 'css/Mlogin.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <h1>PROJECT MANAGEMENT SYSTEM</h1>
+            <img src="mentor-image.png" alt="Mentor Illustration">
+        </div>
+        <div class="right-panel">
+            <h2>Let's you Login</h2>
+            <p>Welcome to your page</p>
+            <form id="login-form">
+                <label for="email">E-mail ID</label>
+                <input type="email" id="email" placeholder="Enter e-mail address" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter password" required>
+                <div class="options">
+                    <label><input type="checkbox" id="keep-login"> Keep me login</label>
+                </div>
+                <button type="submit" id="login-btn">Login</button>
+            </form>
+            <p>Don't have an account? <a href="{% url 'signup' %}">Sign up</a></p>
+        </div>
+    </div>
+    <script>
+        var dashboardURL = "{% url 'dashboard' %}";
+    </script>
+    <script src="{% static 'js/Mlogin.js' %}"></script>
+</body>
+</html>

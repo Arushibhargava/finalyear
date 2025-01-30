@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management System - Sign Up</title>
+    <link rel="stylesheet" href="{% static 'css/tsignup.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <h1>PROJECT MANAGEMENT SYSTEM</h1>
+            <img src="project-management.png" alt="Project Management">
+        </div>
+        <div class="right-side">
+            <h1>Don't have an Account?</h1>
+            <p>Welcome to your page</p>
+            <form>
+                <div class="input-group">
+                    <label for="team_name">Team Name</label>
+                    <input type="text" id="team_name" placeholder="Enter team name">
+                </div>
+                <div class="input-group">
+                    <label for="team_id">Team ID</label>
+                    <input type="text" id="team_id" placeholder="Enter team ID">
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter password">
+                </div>
+                <button type="button" onclick="navigateTo('{% url 'tlogin' %}')">Sign up</button>
+            </form>
+        </div>
+    </div>
+    <script src="{% static 'js/tsignup.js' %}"></script>
+</body>
+</html>

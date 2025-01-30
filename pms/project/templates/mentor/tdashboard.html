@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/tdashboard.css' %}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="profile-section">
+                <div class="profile-icon"></div>
+                <h2>Dashboard</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li class="active"><a href="{% url 'tdashboard' %}">Team Members</a></li>
+                    <li><a href="{% url 'tgroups' %}">Groups</a></li>
+                    <li><a href="{% url 'ttasks' %}">Tasks</a></li>
+                    <li><a href="{% url 'tnotification' %}">Notification</a></li>
+                    <li><a href="{% url 'treport' %}">Report</a></li>
+                </ul>
+            </nav>
+            <div class="logout-btn" onclick="logout()">Logout</div>
+        </aside>
+        <main class="content">
+            <header class="header">
+                <div class="header-profile">
+                    <div class="header-profile-icon" onclick="navigateToProject()"></div>
+                    <h1>Team Members</h1>
+                </div>
+            </header>
+            <section class="team-section">
+                <div class="section-header">
+                    <h2>Team Members</h2>
+                    <button class="create-btn" onclick="createNewRow()">Create New</button>
+                </div>
+                <table id="teamTable">
+                    <thead>
+                        <tr>
+                            <th>S. No.</th>
+                            <th>Name</th>
+                            <th>Class</th>
+                            <th>Branch</th>
+                            <th>Stu ID</th>
+                            <th>Email</th>
+                            <th>Phone No.</th>
+                            <th>Semester</th>
+                            <th>Roll No.</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>John Doe</td>
+                            <td>CSE</td>
+                            <td>Computer Science</td>
+                            <td>12345</td>
+                            <td>johndoe@gmail.com</td>
+                            <td>9876543210</td>
+                            <td>6</td>
+                            <td>20BCS123</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <script src="{% static 'js/tdashboard.js' %}"></script>
+</body>
+</html>

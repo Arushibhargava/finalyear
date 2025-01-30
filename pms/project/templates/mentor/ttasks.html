@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/ttasks.css' %}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="profile-section">
+                <div class="profile-icon"></div>
+                <h2>Dashboard</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'tdashboard' %}">Team Members</a></li>
+                    <li><a href="{% url 'tgroups' %}">Groups</a></li>
+                    <li class="active"><a href="{% url 'ttasks' %}">Tasks</a></li>
+                    <li><a href="{% url 'tnotification' %}">Notification</a></li>
+                    <li><a href="{% url 'treport' %}">Report</a></li>
+                </ul>
+            </nav>
+            <div class="logout-btn" onclick="logout()">Logout</div>
+        </aside>
+        <main class="content">
+            <header class="header">
+                <div class="header-profile">
+                    <div class="header-profile-icon"></div>
+                    <h1>Tasks</h1>
+                </div>
+            </header>
+            <section class="tasks-section">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Document Title</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Upload File</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Project Plan</td>
+                            <td>2025-01-01</td>
+                            <td>2025-01-10</td>
+                            <td><input type="file"></td>
+                            <td>
+                                <select>
+                                    <option value="pending">Pending</option>
+                                    <option value="updated">Updated</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <!-- Additional rows as needed -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    
+    <script src="{% static 'js/ttasks.js' %}"></script>
+</body>
+</html>
+

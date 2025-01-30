@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposals</title>
+    <link rel="stylesheet" href="{% static 'css/cnotification.css' %}">
+</head>
+<body>
+    <div class="content">
+        <h2 class="section-title">📄 Proposals</h2>
+        <hr class="section-divider">
+
+        <div class="proposal-item">
+            <p><strong>Proposal 1:</strong> Project ABC</p>
+            <p>Description: Lorem ipsum dolor sit amet.</p>
+            <button class="accept-btn">Accept</button>
+            <button class="reject-btn">Reject</button>
+        </div>
+
+        <div class="proposal-item">
+            <p><strong>Proposal 2:</strong> Project XYZ</p>
+            <p>Description: Consectetur adipiscing elit.</p>
+            <button class="accept-btn">Accept</button>
+            <button class="reject-btn">Reject</button>
+        </div>
+
+        <div class="back-button">
+            <button onclick="goBack()">← Back</button>
+        </div>
+    </div>
+
+    <script src="{% static 'js/cnotification.js' %}"></script>
+</body>
+</html>

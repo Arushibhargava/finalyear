@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Page</title>
+    <link rel="stylesheet" href="{% static 'css/treport.css' %}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h3>Dashboard</h3>
+            <ul>
+                <li><a href="{% url 'tdashboard' %}">Team Members</a></li>
+                <li><a href="{% url 'tgroups' %}">Group</a></li>
+                <li><a href="{% url 'ttasks' %}">Tasks</a></li>
+                <li><a href="{% url 'tnotification' %}">Notification</a></li>
+                <li><a href="{% url 'treport' %}" class="active">Report</a></li>
+            </ul>
+            <button class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <h2><i class="icon">📋</i> Report</h2>
+            </div>
+
+            <!-- Report Form -->
+            <div class="report-box">
+                <h3>Report a Problem</h3>
+                <form id="report-form">
+                    <!-- Select Box -->
+                    <label for="recipient">Select:</label>
+                    <select id="recipient" required>
+                        <option value="mentor">Mentor</option>
+                        <option value="coordinator">Coordinator</option>
+                    </select>
+
+                    <!-- Description Box -->
+                    <label for="description">Description:</label>
+                    <textarea id="description" placeholder="Enter your report here..." required></textarea>
+
+                    <!-- Send Button -->
+                    <button type="submit" class="send-btn">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/treport.js' %}"></script>
+</body>
+</html>

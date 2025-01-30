@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/report.css' %}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="profile-section">
+                <div class="profile-icon"></div>
+                <h2>Mentor</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li onclick="navigateTo('{% url 'dashboard' %}')">My Teams</li>
+                    <li onclick="navigateTo('{% url 'tasks' %}')">Tasks</li>
+                    <li onclick="navigateTo('{% url 'notification' %}')">Notification</li>
+                    <li class="active" onclick="navigateTo('{% url 'report' %}')">Report</li>
+                </ul>
+            </nav>
+            <div class="logout-btn" onclick="navigateTo('Mlogin.html')">Logout</div>
+        </aside>
+        <main class="content">
+            <header class="header">
+                <h1><span class="icon">📄</span> Report</h1>
+                <button id="add-report-btn" class="add-report-btn">Add Report</button>
+            </header>
+            <section class="report-section">
+                <div class="report-box" id="report-box">
+                    <div class="report-item">
+                        <h3>Team Alpha</h3>
+                        <p>Submitted by: <span class="user-name">John Doe</span></p>
+                        <p>Submitted on: <span class="submission-date">2025-01-20 at 10:30 AM</span></p>
+                        <button class="view-full-btn" data-report="Full report details for Team Alpha.">View Full</button>
+                    </div>
+                    <div class="report-item">
+                        <h3>Team Beta</h3>
+                        <p>Submitted by: <span class="user-name">Jane Smith</span></p>
+                        <p>Submitted on: <span class="submission-date">2025-01-22 at 3:15 PM</span></p>
+                        <button class="view-full-btn" data-report="Full report details for Team Beta.">View Full</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal for Viewing Full Report -->
+    <div id="view-full-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-view-modal">&times;</span>
+            <h2>Full Report</h2>
+            <p id="full-report-content"></p>
+        </div>
+    </div>
+
+    <!-- Modal for Adding a New Report -->
+    <div id="add-report-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-add-modal">&times;</span>
+            <h2>Add Report</h2>
+            <form id="add-report-form">
+                <label for="recipient">Select Recipient:</label>
+                <select id="recipient" required>
+                    <option value="admin">Admin</option>
+                    <option value="coordinator">Coordinator</option>
+                    <option value="team">Team</option>
+                </select>
+                <label for="description">Description:</label>
+                <textarea id="description" rows="4" required></textarea>
+                <button type="submit" class="send-btn">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="{% static 'js/report.js' %}"></script>
+</body>
+</html>

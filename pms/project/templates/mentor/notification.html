@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/notification.css' %}">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="profile-section">
+                <div class="profile-icon"></div>
+                <h2>Mentor</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li onclick="navigateTo('{% url 'dashboard' %}')">My Teams</li>
+                    <li onclick="navigateTo('{% url 'tasks' %}')">Tasks</li>
+                    <li class="active" onclick="navigateTo('{% url 'notification' %}')">Notification</li>
+                    <li onclick="navigateTo('{% url 'report' %}')">Report</li>
+                </ul>
+            </nav>
+            <div class="logout-btn" onclick="navigateTo('{% url 'Mlogin' %}')">Logout</div>
+        </aside>
+        <main class="content">
+            <header class="header">
+                <h1><span class="icon">🔔</span> Notification</h1>
+            </header>
+            <section class="notification-section">
+                <div class="notification-header">
+                    <h2>Send Notification</h2>
+                </div>
+                <div class="notification-box">
+                    <form id="notification-form">
+                        <label for="title">Title:</label>
+                        <input type="text" id="title" placeholder="Enter notification title" required>
+
+                        <label for="description">Description:</label>
+                        <textarea id="description" rows="5" placeholder="Enter notification description" required></textarea>
+
+                        <button type="submit" class="send-btn">Send</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="{% static 'js/notification.js' %}"></script>
+</body>
+</html>
+

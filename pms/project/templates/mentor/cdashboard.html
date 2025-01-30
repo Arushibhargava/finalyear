@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/cdashboard.css' %}">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>⚪ Dashboard</h2>
+        <p>Coordinator</p>
+        <ul>
+            <li><a href="#" class="active" onclick="showPage('groups')">Group</a></li>
+           <li> <a href="{% url 'ctasks' %}">Tasks</a></li>
+           <li> <a href="{% url 'cnotification' %}">Notification</a></li>
+           <li> <a href="{% url 'creport' %}">Report</a></li>
+        </ul>
+        <a href="{% url 'clogin' %}" class="logout-btn">Logout</a>
+    </div>
+
+    <div class="content">
+        <!-- Groups Section -->
+        <div id="groups" class="page">
+            <h2> <span class="icon">👥</span> Groups</h2>
+            <hr class="separator">
+            <table border="1">
+                <tr>
+                    <th>Team Name</th>
+                    <th>Name of Members</th>
+                    <th>Project Name</th>
+                    <th>Mentor</th>
+                    <th>Abstract</th>
+                    <th>Team_id</th>
+                </tr>
+                <tr>
+                    <td>XYZ</td>
+                    <td>
+                        <ul>
+                            <li>abc</li>
+                            <li>def</li>
+                        </ul>
+                    </td>
+                    <td>GHI</td>
+                    <td>mklkk V</td>
+                    <td>szfdgfdhdgjdnngn xvbvcxbvxbxbx</td>
+                    <td>csd71</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="{% static 'js/cdashboard.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    <link rel="stylesheet" href="{% static 'css/Mproject.css' %}">
+</head>
+<body>
+    <div class="container">
+        <!-- Back Arrow -->
+        <div class="back-arrow" onclick="goBack()">
+            &#8592; Back
+        </div>
+
+        <!-- Project Details Section -->
+        <div class="project-details">
+            <h1>Project Details</h1>
+            <div class="input-group">
+                <label for="project-name">Project Name</label>
+                <input type="text" id="project-name" placeholder="Enter Project Name">
+            </div>
+            <div class="input-group">
+                <label for="description">Description</label>
+                <textarea id="description" placeholder="Enter Description"></textarea>
+            </div>
+            <div class="input-group">
+                <label for="tech-stack">Tech Stack</label>
+                <input type="text" id="tech-stack" placeholder="Enter Tech Stack">
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/Mproject.js' %}"></script>
+</body>
+</html>

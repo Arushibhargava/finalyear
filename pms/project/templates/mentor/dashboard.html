@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+</head>
+<body>
+    <div class="dashboard">
+        <aside class="sidebar">
+            <div class="profile-section">
+                <div class="profile-pic"></div>
+                <h2>Mentor</h2>
+            </div>
+            <nav class="menu">
+                <ul>
+                    <li class="active" onclick="navigateTo('{% url 'dashboard' %}')">My Teams</li>
+                    <li onclick="navigateTo('{% url 'tasks' %}')">Tasks</li>
+                    <li onclick="navigateTo('{% url 'notification' %}')">Notification</li>
+                    <li onclick="navigateTo('{% url 'report' %}')">Report</li>
+                </ul>
+            </nav>
+            <button class="logout" onclick="logout()">Logout</button>
+        </aside>
+        <main class="main-content">
+            <header>
+                <h1><span class="icon">👥</span> My Team Details</h1>
+            </header>
+            <section class="team-details">
+                <div class="team-header">
+                    <h2>Team 1</h2>
+                    <h2>CSD227</h2>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>SNO.</th>
+                            <th>Name</th>
+                            <th>Class</th>
+                            <th>Branch</th>
+                            <th>stu_id</th>
+                            <th>E-mail</th>
+                            <th>Phone no.</th>
+                            <th>Semester</th>
+                            <th>Roll-no</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>John Doe</td>
+                            <td>B.Tech</td>
+                            <td>CSE</td>
+                            <td>12345</td>
+                            <td>johndoe@example.com</td>
+                            <td>1234567890</td>
+                            <td>5</td>
+                            <td>01</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Jane Smith</td>
+                            <td>B.Tech</td>
+                            <td>ECE</td>
+                            <td>12346</td>
+                            <td>janesmith@example.com</td>
+                            <td>9876543210</td>
+                            <td>5</td>
+                            <td>02</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button class="project-details" onclick="navigateTo('Mproject')">Project Details</button>
+            </section>
+        </main>
+    </div>
+    <script src="{% static 'js/dashboard.js' %}"></script>
+</body>
+</html>
+

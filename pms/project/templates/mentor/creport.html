@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/creport.css' %}">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Dashboard</h2>
+        <p>Coordinator</p>
+        <ul>
+            <li><a href="{% url 'cdashboard' %}">Group</a></li>
+            <li><a href="{% url 'ctasks' %}">Tasks</a></li>
+            <li><a href="{% url 'cnotification' %}">Notification</a></li>
+            <li><a href="{% url 'creport' %}" class="active">Report</a></li>
+        </ul>
+        <a href="{% url 'clogin' %}" class="logout-btn">Logout</a>
+    </div>
+
+    <div class="content">
+        <h2>📄 <span>Reports</span></h2>
+        <hr>
+        
+        <div class="report-section">
+            <h3>Team Alpha</h3>
+            <p>Submitted on: 2025-01-20 at 10:30 AM</p>
+            <p>Project Title: AI-Based Security</p>
+            <button class="view-btn" onclick="viewReport('alpha')">View Full</button>
+        </div>
+
+        <div class="report-section">
+            <h3>Team Beta</h3>
+            <p>Submitted on: 2025-01-22 at 3:15 PM</p>
+            <p>Project Title: Blockchain Solutions</p>
+            <button class="view-btn" onclick="viewReport('beta')">View Full</button>
+        </div>
+
+        <div class="report-section">
+            <h3>Team Gamma</h3>
+            <p>Submitted on: 2025-01-25 at 1:45 PM</p>
+            <p>Project Title: Smart IoT Devices</p>
+            <button class="view-btn" onclick="viewReport('gamma')">View Full</button>
+        </div>
+    </div>
+
+    <script src="{% static 'js/creport.js' %}"></script>
+</body>
+</html>

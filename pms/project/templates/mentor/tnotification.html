@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/tnotification.css' %}">
+    <script src="{% static 'js/tnotification.js' %}" defer></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="profile-section">
+                <div class="profile-icon"></div>
+                <h2>Dashboard</h2>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'tdashboard' %}" class="nav-link">Team Members</a></li>
+                    <li><a href="{% url 'tgroups' %}" class="nav-link">Groups</a></li>
+                    <li><a href="{% url 'ttasks' %}" class="nav-link">Tasks</a></li>
+                    <li><a href="{% url 'tnotification' %}" class="nav-link active">Notification</a></li>
+                    <li><a href="{% url 'treport' %}" class="nav-link">Report</a></li>
+                </ul>
+            </nav>
+            <div class="logout-btn">Logout</div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <!-- Header -->
+            <header class="header">
+                <h1><span class="icon">🔔</span> Notification</h1>
+            </header>
+
+            <!-- Notification Section -->
+            <section class="notification-section">
+                <div class="notification-header">
+                    <h2>Send Notification</h2>
+                </div>
+                <div class="notification-box">
+                    <form id="notification-form">
+                        <label for="title">Title:</label>
+                        <input type="text" id="title" placeholder="Enter notification title" required>
+
+                        <label for="description">Description:</label>
+                        <textarea id="description" rows="5" placeholder="Enter notification description" required></textarea>
+
+                        <button type="submit" class="send-btn">Send</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
